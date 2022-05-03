@@ -3,7 +3,10 @@ import ProductList from './ProductList'
 import Chefs from './Chefs'
 import About from './About'
 import Contact from './Contact'
+import Delivery from './Devivery'
 import { Route,Routes } from 'react-router-dom'
+import Topics from './Topics'
+import Tasters from './Tasters'
 
 export class Main extends Component {
   render() {
@@ -15,7 +18,11 @@ export class Main extends Component {
           <Route element={<ProductList/>} path='/'/>
           <Route element={<Chefs/>} path='/listachefs'/>
           <Route element={<About/>} path='/about'/>
+          <Route element={<Delivery/>} path='/delivery'/>
+          <Route element={<Topics/>} path='/topics'/>
+          <Route element={<Tasters/>} path='/tasters'/>
           <Route element={<Contact/>} path='/contact'/>
+
           </Routes>
           
       </main>

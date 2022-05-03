@@ -7,10 +7,12 @@ import './styles/styles.scss'
 // import { userState, useState } from 'react';
 import { useState } from 'react';
 import {userContext} from './context/userContext';
+import {themeContext} from './context/themeContext';
 
 function App() {
   
 const [user, setUser] = useState("Alvaru"); //hook UseState
+const [theme, setTheme] = useState(""); //
 
 //login
 const login = (name) =>{
@@ -22,20 +24,30 @@ const logout = () =>{
   setUser("");
 }
 
-const data = {
+const toggleTheme = () => theme===""?setTheme("-dark"):setTheme("");
+
+const userdata = {
   user,
   login,
   logout
 }
+
+const themeData = {
+  theme,
+  toggleTheme
+}
+
   return (
     <div className="App">
+      <themeContext.Provider value={themeData}>
       <BrowserRouter>
-      <userContext.Provider value={data}>
+      <userContext.Provider value={userdata}>
       <Header/>
       <Main/>
       </userContext.Provider>
       </BrowserRouter>
       <Footer/>
+      </themeContext.Provider>
     </div>
   );
 }
