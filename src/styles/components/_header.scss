@@ -22,6 +22,7 @@
     @include header_style();
 }
 .header-dark{
-    background-color: $menu-color-dark;
+    // background-color: $menu-color-dark;
+    background-color:black;
     @include header_style();
 }
